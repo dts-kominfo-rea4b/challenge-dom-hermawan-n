@@ -50,23 +50,19 @@
 
         // TODO: register event onclick / addEventListener untuk button
         // akan menjalankan fungsi fnClickHandler
-        $(document).ready(function() {
-            button = document.getElementById("todo-submit");
-            input = document.getElementById("todo-input");
-            output = document.getElementById("todo-output");
+        button = document.getElementById("todo-submit");
+        input = document.getElementById("todo-input");
+        output = document.getElementById("todo-output");
 
-            button.addEventListener("click", function() {
+        button.addEventListener("click", function() {
+            fnClickHandler(input.value);
+        });
+        // TODO: register event onkeypress / addEventListener untuk input
+        // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
+        input.addEventListener("keypress", function(e) {
+            if (e.key === "Enter") {
                 fnClickHandler(input.value);
-            });
-
-            // TODO: register event onkeypress / addEventListener untuk input
-            // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
-
-            input.addEventListener("keypress", function(e) {
-                if (e.key === "Enter") {
-                    fnClickHandler(input.value);
-                }
-            });
+            }
         });
     </script>
 </body>
